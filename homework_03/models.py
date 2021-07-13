@@ -88,7 +88,7 @@ async def add_users(data: List[dict]):
     async with Session() as session:
         async with session.begin():
             for user_details in data:
-                user = User(name=user_details['name'], username=user_details['username'], email=user_details['email'])
+                user = User(id=user_details['id'], name=user_details['name'], username=user_details['username'], email=user_details['email'])
                 session.add(user)
 
 
