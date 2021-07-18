@@ -1,0 +1,32 @@
+{% extends 'base.html'%}
+
+{% block title %}
+  Главная страница
+{% endblock %}
+
+{% block body %}
+  <div>
+    <h1>Первое веб-приложение</h1>
+    <hr>
+    <h3>Цель:</h3>
+    <p>В этом ДЗ вы создадите первое веб-приложение.</p>
+    <ul class="list">
+      <li>скопируйте папку homework_04 для этой домашки (<mark>Памятка: https://github.com/OtusTeam/BasePython/tree/homeworks</mark>)</li>
+      <li>используйте следующие пакеты: Flask</li>
+      <li>в модуле app создайте базовое приложение на Flask</li>
+      <li>создайте index view /</li>
+      <li>добавьте страницу /about/, добавьте туда текст</li>
+      <li>создайте базовый шаблон (используйте https://getbootstrap.com/docs/5.0/getting-started/introduction/#starter-template)</li>
+      <li>в базовый шаблон подключите статику Bootstrap 5 и добавьте стили, примените ихв базовый шаблон добавьте навигационную панель nav (https://getbootstrap.com/docs/5.0/components/navbar/)</li>
+      <li>в навигационную панель добавьте ссылки на главную страницу / и на страницу /about/ при помощи url_for</li>
+    </ul>
+    <h3>Критерии оценки:</h3>
+    <ul class="list">
+      <li>создано приложение Flask</li>
+      <li>добавлены страницы / и /about/</li>
+      <li>в базовый шаблон добавлена навигационная панель</li>
+      <li>применены стили</li>
+      <li>автоматический тест test_homework_04 проходит</li>
+    </ul>
+  </div>
+{% endblock %}
