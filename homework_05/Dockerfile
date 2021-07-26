@@ -18,8 +18,7 @@ COPY Pipfile.lock .
 RUN pip install pipenv
 
 # Устанавливаем все пакеты от которых зависит приложение
-RUN pipenv install --system --deploy --ignore-pipfile
-#RUN pip install flask
+RUN pipenv install --system
 
 # Копируем файлы приложения
 COPY web-app.py .
