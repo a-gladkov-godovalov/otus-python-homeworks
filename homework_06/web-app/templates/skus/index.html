@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Интернет аптека | Каталог товара
+{% endblock %}
+
+{% block body %}
+  <div>
+    <div class="card w-75">
+      <div class="card-body">
+        <h5 class="card-title">Каталог товара</h5>
+        {% if not skus %}
+          <p class="card-text">Список товара пока пуст</p>
+          <a class="text-decoration-none" href="{{ url_for('index') }}">
+            На главную
+          </a>
+        {% else %}
+          <p class="card-text">В списке товаров: {{ count }}</p>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Наименование</th>
+                <th scope="col">Категория</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for sku in skus %}
+                <tr>
+                  <td>{{ sku.id }}</td>
+                  <td>{{ sku.name }}</td>
+                  <td>{{ sku.category.name }}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <br>
+  <div>
+    <a href="{{ url_for('skus_app.add_sku') }}" class="btn btn-primary">
+      Добавить новый товар
+    </a>
+  </div>
+{% endblock %}

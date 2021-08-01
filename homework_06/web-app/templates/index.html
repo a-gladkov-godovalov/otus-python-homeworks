@@ -1,0 +1,17 @@
+{% extends 'base.html'%}
+
+{% block title %}
+  Интернет аптека | Заказ лекарств
+{% endblock %}
+
+{% block body %}
+  <div class="card w-75">
+    <div class="card-body">
+      <h5 class="card-title">Каталог товара</h5>
+      <p class="card-text">В нашем каталоге вы можете найти нужные товары при помощи поиска по наименованию</p>
+      <a href="{{ url_for('skus_app.catalog') }}" class="btn btn-primary" style="background-color: #5d31b5;">
+        Каталог
+      </a>
+    </div>
+  </div>
+{% endblock %}

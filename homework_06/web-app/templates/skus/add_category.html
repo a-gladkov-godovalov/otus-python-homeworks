@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Интернет аптека | Добавить категорию
+{% endblock %}
+
+{% block body %}
+  <div class="card w-75">
+    <div class="card-body">
+      <h5 class="card-title">Добавить новую группу товара</h5>
+      <form method="post">
+        <label id="label-input-category-name" for="input-category-name">
+          Наименование группы товара:
+        </label>
+        <input
+          id="input-category-name"
+          name="category-name"
+          type="text"
+          placeholder="Голованя боль"
+          required
+        >
+        <p><br>
+        <button type="submit" style="background-color: #dc3545">Сохранить</button>
+      </form>
+    </div>
+  </div>
+  <br>
+  <div>
+    <a href="{{ url_for('skus_app.add_sku') }}" class="btn btn-primary">
+      Добавить новый товар
+    </a>
+  </div>
+
+{% endblock %}

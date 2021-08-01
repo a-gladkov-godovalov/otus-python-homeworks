@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Интернет аптека | Добавить товар
+{% endblock %}
+
+{% block body %}
+  <div class="card w-75">
+    <div class="card-body">
+      <h5 class="card-title">Добавить новый товар</h5>
+      <form method="post">
+        <label id="label-input-sku-name" for="input-sku-name">Наименование товара:</label>
+        <input
+          id="input-sku-name"
+          name="sku-name"
+          type="text"
+          placeholder="Анальгин"
+          required
+        >
+        <p><br>
+        <label id="label-input-category" for="input-category">Категория:</label>
+        <select id="select-category" name="category-id" required>
+          {% for category in categorys: %}
+            <option value={{ category.id }}>{{ category.name }}</option>
+          {% endfor %}
+        </select>
+        <p><br>
+        <button type="submit" style="background-color: #dc3545">Сохранить</button>
+      </form>
+    </div>
+  </div>
+  <br>
+  <div>
+    <a href="{{ url_for('skus_app.add_category') }}" class="btn btn-primary">
+      Добавить новую категорию товара
+    </a>
+  </div>
+{% endblock %}

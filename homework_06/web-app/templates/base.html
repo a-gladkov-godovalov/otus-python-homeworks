@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+
+    <!-- Image -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+    <link rel="logo" href="{{ url_for('static', filename='img/logo.svg') }}">
+
+    <title>
+      {% block title %}
+        Homework_04
+      {% endblock %}
+    </title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #5d31b5;">
+      <div class="container-fluid">
+        <a class="navbar-brand">
+          <img src="static/img/logo.svg" alt="" width="24" height="24"
+               class="d-inline-block align-top" alt="" loading="lazy">
+          Интернет аптека
+        </a>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{{ url_for('index') }}">Главная</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('skus_app.catalog') }}">Каталог</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('about') }}">О сайте</a>
+            </li>
+          </ul>
+          <span class="navbar-text">
+            Заказ лекарств
+          </span>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      {% block body %}
+      {% endblock %}
+    </div>
+
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+  </body>
+</html>
